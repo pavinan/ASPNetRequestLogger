@@ -20,3 +20,7 @@ For integrated:
     </modules>
 </system.webServer>
 ```
+
+Use "bharat_url_filter" for filtering urls by regex.
+
+All logs are stored at "%TEMP%\BharatASPLogs\(md5 hash of website domain)\".
