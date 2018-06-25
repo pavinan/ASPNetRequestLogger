@@ -23,4 +23,4 @@ For integrated:
 
 Use "bharat_url_filter" environment variable for filtering urls by regex.
 
-All logs are stored at "%TEMP%\BharatASPLogs\(md5 hash of website domain)\".
+All logs are stored at "%TEMP%\\BharatASPLogs\\(md5 hash of website domain)\\".
