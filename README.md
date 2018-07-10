@@ -7,9 +7,9 @@ Simple to use request logger for Asp.Net.
 For classic:
 ```xml
 <system.web>
-  <modules>
+  <httpModules>
     <add name="BH" type="Bharat.ASPNetRequestLogger.TextLoggerModule, Bharat.ASPNetRequestLogger" />
-  </modules>
+  </httpModules>
 </system.web>
 ```
 For integrated:
