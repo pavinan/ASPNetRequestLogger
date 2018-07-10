@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -35,12 +36,12 @@ namespace Bharat.ASPNetRequestLogger
             HttpContext context = application.Context;
             try
             {
-                var logFilter = Environment.GetEnvironmentVariable("bharat_url_filter") ?? "";
+                var logFilter = ConfigurationManager.AppSettings["asp_url_filter"] ?? Environment.GetEnvironmentVariable("asp_url_filter") ?? "";
 
                 if (!string.IsNullOrWhiteSpace(logFilter))
                 {
                     var regex = new Regex(logFilter, RegexOptions.IgnoreCase);
-                    
+
                     if (!regex.IsMatch(context.Request.Url.Authority))
                     {
                         return;
@@ -52,7 +53,7 @@ namespace Bharat.ASPNetRequestLogger
                 var domainUUID = string.Join("", domainHash.Select(x => x.ToString("x2")));
                 md5.Dispose();
 
-                var tempFolder = $"{Environment.GetEnvironmentVariable("TEMP")}\\BharatASPLogs\\{domainUUID}\\";
+                var tempFolder = context.Server.MapPath("/ASP_LOGS/");
 
                 Directory.CreateDirectory(tempFolder);
 
