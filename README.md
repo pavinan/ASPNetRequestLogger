@@ -21,6 +21,6 @@ For integrated:
 </system.webServer>
 ```
 
-Use "bharat_url_filter" environment variable or app settings for filtering urls by regex.
+Use "asp_url_filter" environment variable or app settings for filtering urls by regex.
 
 All logs are stored at "~/ASP_LOGS/".
