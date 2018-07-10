@@ -47,12 +47,7 @@ namespace Bharat.ASPNetRequestLogger
                         return;
                     }
                 }
-
-                var md5 = new MD5CryptoServiceProvider();
-                var domainHash = md5.ComputeHash(Encoding.UTF8.GetBytes(context.Request.Url.Authority.ToLower()));
-                var domainUUID = string.Join("", domainHash.Select(x => x.ToString("x2")));
-                md5.Dispose();
-
+                
                 var tempFolder = context.Server.MapPath("/ASP_LOGS/");
 
                 Directory.CreateDirectory(tempFolder);
