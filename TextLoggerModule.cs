@@ -42,7 +42,7 @@ namespace Bharat.ASPNetRequestLogger
                 {
                     var regex = new Regex(logFilter, RegexOptions.IgnoreCase);
 
-                    if (!regex.IsMatch(context.Request.Url.Authority))
+                    if (!regex.IsMatch(context.Request.Url.ToString()))
                     {
                         return;
                     }
