@@ -7,9 +7,9 @@ Simple to use request logger for Asp.Net.
 For classic:
 ```xml
 <system.web>
-  <modules>
+  <httpModules>
     <add name="BH" type="Bharat.ASPNetRequestLogger.TextLoggerModule, Bharat.ASPNetRequestLogger" />
-  </modules>
+  </httpModules>
 </system.web>
 ```
 For integrated:
@@ -21,6 +21,6 @@ For integrated:
 </system.webServer>
 ```
 
-Use "bharat_url_filter" environment variable or app settings for filtering urls by regex.
+Use "asp_url_filter" environment variable or app settings for filtering urls by regex.
 
-All logs are stored at "%TEMP%\\BharatASPLogs\\(md5 hash of website domain)\\".
+All logs are stored at "~/ASP_LOGS/".
